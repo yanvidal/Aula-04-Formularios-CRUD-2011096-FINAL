@@ -1,0 +1,65 @@
+<!-- https://docs.djangoproject.com/en/4.2/intro/tutorial06/ -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Minha Página Bonita</title>
+  <link href="{% static 'styles.css' %}" rel="stylesheet" type="text/css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Sobre mim e meus filmes favoritos</h1>
+  <h2>Sobre mim e meus filmes favoritos</h2>
+  <h3>Sobre mim e meus filmes favoritos</h3>
+  <h4>Sobre mim e meus filmes favoritos</h4>
+  <h5>Sobre mim e meus filmes favoritos</h5>
+  <h6>Sobre mim e meus filmes favoritos</h6>
+
+  <p style="text-align: justify;">
+    <b style="color: red">Mussum Ipsum, cacilds vidis litro abertis.</b> <i>Diuretics paradis num copo é motivis de denguis.</i> <u>Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</u> Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! <span style="color: pink;">Casamentiss faiz malandris se pirulitá.</span>
+  </p>
+
+  <div class="blue-center">
+    <div><img src="https://upload.wikimedia.org/wikipedia/ru/1/1b/Barbenheimer.jpg" width="300"></div>
+    <div><img src="{% static 'images/dogs.avif'%}" width="300"></div>
+  </div>
+
+  <h2>Meus filmes favoritos de todos os tempos</h2>
+  <!-- <ol>
+    <li>O Sexto Sentido</li>
+    <li>O Grande Truque</li>
+    <li>A Chegada</li>
+    <li>Vingadores: Guerra Infinita</li>
+    <li>La La Land</li>
+  </ol> -->
+  <ol>
+    {% for movie in mvs %}
+      <li>
+        {{ movie.title }}
+        <a href="/movies/update/{{ movie.id }}">Atualizar</a>
+        <a href="/movies/delete/{{ movie.id }}">Remover</a>
+      </li>
+    {% endfor %}
+  </ol>
+  <a href="/movies">Adicionar Novo Filme</a>
+
+  <h2>Coisas que eu gosto de fazer</h2>
+  <ul>
+    <li>Sair para jantar com minha esposa</li>
+    <li>Assistir filmes</li>
+    <li>Dar aulas</li>
+    <li>Jogar video-game</li>
+    <li>Fazer exercícios físicos</li>
+    <li>Viajar para um novo país</li>
+  </ul>
+</body>
+
+</html>

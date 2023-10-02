@@ -1,0 +1,1 @@
+[{"model": "appdoluis.movies", "pk": 1, "fields": {"title": "O Sexto Sentido", "director": "M. Night Shyamalan", "genre": "Terror/Suspense", "release_date": "2023-09-05"}}, {"model": "appdoluis.movies", "pk": 2, "fields": {"title": "O Grande Truque", "director": "Christopher Nolan", "genre": "Drama/Ficção", "release_date": "2023-04-18"}}]
